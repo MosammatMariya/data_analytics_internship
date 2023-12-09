@@ -6,27 +6,27 @@ class Query5:
         self.con = PostgresConnection().getConnection()
         print("Constructor Called")
 
+    @property
     def execute(self):
         con = self.con
         cur = con.cursor()
 
-        div_q = """ SELECT s.division, SUM(f.total_price) FROM ecomdb_star_schema.fact_table f 
+        df_q1 = """ SELECT s.division, t.quarter, SUM(f.total_price) FROM ecomdb_star_schema.fact_table f 
                     join ecomdb_star_schema.store_dim s on s.store_key = f.store_key
                     join ecomdb_star_schema.time_dim t on t.time_key = f.time_key
-                    where t.year = 2015 AND s.division = 'Barishal'
-                    group by cube(s.division)
-                    order by s.division;
+                    where t.year = 2015 AND s.division = 'Dhaka'
+                    group by cube(s.division, t.quarter)
+                    order by t.quarter;
                 """
-        cur.execute(div_q)
-        result = cur.fetchall()
-        pd_data = pd.DataFrame(list(result), columns=["Division", "total sales"])
-        pd_data["total sales"] = pd_data["total sales"].astype("float64")
-        pd_data = pd_data.dropna()
+        cur.execute(df_q1)
+        records = cur.fetchall()
+        df_q2 = pd.DataFrame(records, columns=["division", "quarter", "total sales"])
+        df_q2 = df_q2.dropna()
         # print(pd_data)
-        return pd_data.to_dict(orient='records')
+        return df_q2.to_dict(orient='records')
         # return result
 
 if __name__ == '__main__':
     query5 = Query5()
-    data = query5.execute()
+    data = query5.execute
     print(data)
