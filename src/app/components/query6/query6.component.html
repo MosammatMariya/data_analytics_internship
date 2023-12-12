@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewpoint" content="width=device-width,initial-scale+1.0">
+  <title> table</title>
+  <style>
+    body{background-color: cadetblue;
+      front-family:'Times New Roman',sans-serif;
+    }
+    .container{
+      margin-top: auto;
+    }
+    .card{
+      border: 1px solid cadetblue;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s;
+      background-color: lightblue;
+    }
+    .card:hover{
+      transform: translateY(.5px);
+    }
+    .card-header{
+      background-color: beige;
+      color: #c2c3c4;
+      padding:10px;
+      margin-bottom: 15px;
+    }
+    .card ng-content{
+      padding: 15px;
+    }
+    .card h2{
+      margin-bottom: 20px;
+    }
+    .card h4 {
+      margin-bottom: 10px;
+    }
+
+  </style>
+</head>
+
+<div class="container">
+  <div class="row">
+    <div class="col-5 p-1">
+      <div class="card p-2 text-center table-wrapper-scroll-y my-custom-scrollbar">
+        <h3 class="text-primary text-center">Query 6</h3>
+        <table datatable [dtOptions]="option" [dtTrigger]="dtTrigger" class="table table-bordered table-striped mb-0">
+          <thead>
+          <tr>
+            <th>Store key</th>
+            <th>Item Name</th>
+            <th>Total Sales</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of data_all6">
+            <td>{{ data.store_key }}</td>
+            <td>{{ data.item_name }}</td>
+            <td>{{ data['total sales(quantity)'] }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-7">
+        <canvas baseChart
+                [type]="'bar'"
+                [datasets]="chartData"
+                [labels]="chartLabels"
+                [options]="chartOptions">
+        </canvas>
+    </div>
+  </div>
+</div>
