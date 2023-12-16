@@ -20,6 +20,15 @@ import { Query7Component } from './components/query7/query7.component';
 import { Query8Component } from './components/query8/query8.component';
 import { Query9Component } from './components/query9/query9.component';
 import { Query10Component } from './components/query10/query10.component';
+import { Analytics1aComponent } from './components/analytics1a/analytics1a.component';
+import { Analytics1bComponent } from './components/analytics1b/analytics1b.component';
+import { Analytics2aComponent } from './components/analytics2a/analytics2a.component';
+import { Analytics2bComponent } from './components/analytics2b/analytics2b.component';
+import { Analytics3aComponent } from './components/analytics3a/analytics3a.component';
+import { Analytics3bComponent } from './components/analytics3b/analytics3b.component';
+import { Analytics4aComponent } from './components/analytics4a/analytics4a.component';
+import { Analytics4bComponent } from './components/analytics4b/analytics4b.component';
+import { Analytics5aComponent } from './components/analytics5a/analytics5a.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +45,15 @@ import { Query10Component } from './components/query10/query10.component';
     Query8Component,
     Query9Component,
     Query10Component,
+    Analytics1aComponent,
+    Analytics1bComponent,
+    Analytics2aComponent,
+    Analytics2bComponent,
+    Analytics3aComponent,
+    Analytics3bComponent,
+    Analytics4aComponent,
+    Analytics4bComponent,
+    Analytics5aComponent
   ],
     imports: [
         BrowserModule,
