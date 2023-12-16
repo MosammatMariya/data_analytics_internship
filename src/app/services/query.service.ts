@@ -57,4 +57,31 @@ export class QueryService {
   getQuery10(): Observable<any> {
     return this.http.get<any>(`${baseUrl}/10`);
   }
+  getanalytics1a():Observable<any>{
+    return this.http.get<any>(`${baseUrl}/a1a`);
+  }
+  getanalytics1b():Observable<any>{
+    return this.http.get<any>(`${baseUrl}/a1b`);
+  }
+  getanalytics2a():Observable<any>{
+    return this.http.get<any>(`${baseUrl}/a2a`);
+  }
+  getanalytics2b():Observable<any>{
+    return this.http.get<any>(`${baseUrl}/a2b`);
+  }
+  getanalytics3a():Observable<any>{
+    return this.http.get<any>(`${baseUrl}/a3a`);
+  }
+  getanalytics3b():Observable<any>{
+    return this.http.get<any>(`${baseUrl}/a3b`);
+  }
+  getanalytics4a():Observable<any>{
+    return this.http.get<any>(`${baseUrl}/a4a`);
+  }
+  getanalytics4b():Observable<any>{
+    return this.http.get<any>(`${baseUrl}/a4b`);
+  }
+  getanalytics5a():Observable<any>{
+    return this.http.get<any>(`${baseUrl}/a5a`);
+  }
 }
